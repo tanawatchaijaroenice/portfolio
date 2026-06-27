@@ -1,0 +1,47 @@
+<section class="projects-section" id="projects">
+  <div class="ambient-glow projects-glow"></div>
+  
+  <div class="container">
+    <div class="section-header" appScrollAnimate>
+      <span class="label-md primary-label">{{ lang.t().projects.overline }}</span>
+      <h2 class="display-lg">{{ lang.t().projects.heading }}</h2>
+    </div>
+
+    <div class="project-grid" appScrollAnimate>
+      @for (project of lang.t().projects.items; track project.name; let i = $index) {
+        <article class="project-card hover-shadow">
+          <div class="card-status">
+            <span class="status-lbl"><i class="fa-solid fa-circle-check"></i> BUILD COMPLETE</span>
+            <div class="status-tech">
+              @for (t of project.tech; track t; let idx = $index) {
+                @if (idx < 2) {
+                  <span class="status-tech-dot" [title]="t"></span>
+                }
+              }
+            </div>
+          </div>
+          
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.name" class="project-img-el" />
+            <span class="project-index">{{ '0' + (i + 1) }}</span>
+          </div>
+
+          <div class="project-info">
+            <span class="category label-md">{{ project.category }}</span>
+            <h3 class="project-title">{{ project.name }}</h3>
+            <p class="project-desc body-md">{{ project.desc }}</p>
+            <div class="highlight">
+              <span class="highlight-label">{{ lang.t().projects.highlightsLabel }}</span>
+              <span class="highlight-txt">{{ project.highlights }}</span>
+            </div>
+            <div class="tech">
+              @for (t of project.tech; track t) {
+                <span class="tech-tag">{{ t }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

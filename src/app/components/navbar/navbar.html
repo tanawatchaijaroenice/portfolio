@@ -1,0 +1,27 @@
+<nav class="floating-nav">
+  <div class="links">
+    <a href="#about" class="nav-link" [class.active]="activeSection() === 'about'" [title]="lang.t().nav.about">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <a href="#expertise" class="nav-link" [class.active]="activeSection() === 'expertise'" [title]="lang.t().nav.expertise">
+      <i class="fa-solid fa-laptop-code"></i>
+    </a>
+    <a href="#journey" class="nav-link" [class.active]="activeSection() === 'journey'" [title]="lang.t().nav.journey">
+      <i class="fa-solid fa-briefcase"></i>
+    </a>
+    <a href="#projects" class="nav-link" [class.active]="activeSection() === 'projects'" [title]="lang.t().nav.projects">
+      <i class="fa-solid fa-folder"></i>
+    </a>
+    <a href="#contact" class="nav-link" [class.active]="activeSection() === 'contact'" [title]="lang.t().nav.contact">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+  <button
+    type="button"
+    class="lang-toggle"
+    (click)="lang.toggle()"
+    [attr.aria-label]="lang.lang() === 'th' ? 'Switch to English' : 'สลับเป็นภาษาไทย'"
+  >
+    <span class="lang-text">{{ lang.lang() === 'th' ? 'EN' : 'TH' }}</span>
+  </button>
+</nav>

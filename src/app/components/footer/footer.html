@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <div class="name">{{ lang.fullName() }}</div>
+      <div class="tagline label-md">{{ lang.t().footer.tagline }}</div>
+    </div>
+    <div class="socials">
+      <a [href]="lang.contact.github" target="_blank" rel="noopener" class="btn btn-tertiary">GitHub</a>
+      <a [href]="'mailto:' + lang.contact.email" class="btn btn-tertiary">Email</a>
+    </div>
+    <div class="copyright label-md">
+      &copy; {{ year }} {{ lang.fullName() }}. {{ lang.t().footer.rights }}
+    </div>
+  </div>
+</footer>

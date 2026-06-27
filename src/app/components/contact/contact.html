@@ -1,0 +1,35 @@
+<section class="contact-section" id="contact">
+  <div class="ambient-glow contact-glow"></div>
+  <div class="container grid grid-2">
+    <div class="contact-content" appScrollAnimate>
+      <span class="label-md primary-label">{{ lang.t().contact.overline }}</span>
+      <h2 class="display-lg">{{ lang.t().contact.heading }}</h2>
+      <p class="body-lg">{{ lang.t().contact.intro }}</p>
+      <a [href]="'mailto:' + lang.contact.email" class="btn btn-primary cta">
+        {{ lang.t().contact.ctaEmail }}
+      </a>
+    </div>
+
+    <div class="contact-list" appScrollAnimate>
+      <a [href]="'mailto:' + lang.contact.email" class="contact-item card hover-shadow">
+        <span class="contact-label label-md">{{ lang.t().contact.emailLabel }}</span>
+        <span class="contact-value">{{ lang.contact.email }}</span>
+      </a>
+
+      <a [href]="lang.contact.phoneHref" class="contact-item card hover-shadow">
+        <span class="contact-label label-md">{{ lang.t().contact.phoneLabel }}</span>
+        <span class="contact-value">{{ lang.contact.phone }}</span>
+      </a>
+
+      <a [href]="lang.contact.github" target="_blank" rel="noopener" class="contact-item card hover-shadow">
+        <span class="contact-label label-md">{{ lang.t().contact.githubLabel }}</span>
+        <span class="contact-value">{{ lang.contact.githubHandle }}</span>
+      </a>
+
+      <div class="contact-item card">
+        <span class="contact-label label-md">{{ lang.t().contact.locationLabel }}</span>
+        <span class="contact-value">{{ lang.locationText() }}</span>
+      </div>
+    </div>
+  </div>
+</section>

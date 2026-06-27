@@ -1,0 +1,86 @@
+<section class="expertise-section" id="expertise">
+  <div class="ambient-glow skills-glow"></div>
+  
+  <div class="container grid grid-2">
+    <div class="skills-visual animate-on-scroll" appScrollAnimate>
+      <div class="hand-container hover-shadow">
+        <img src="images/skills-robot-hand.png" alt="Skills Hologram Hand" class="hand-img" />
+      </div>
+    </div>
+
+    <div class="skills-content animate-on-scroll" appScrollAnimate>
+      <span class="label-md primary-label">{{ lang.t().expertise.overline }}</span>
+      <h2 class="display-lg skills-title">{{ lang.lang() === 'th' ? 'ทักษะของผม' : 'My Skills' }}</h2>
+      <p class="intro body-lg">{{ lang.t().expertise.intro }}</p>
+
+      <div class="progress-container">
+        <div class="progress-item">
+          <div class="progress-info">
+            <span class="skill-name"><i class="devicon-angularjs-plain colored"></i> Angular (Core Strength)</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" style="width: 95%"></div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-info">
+            <span class="skill-name"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+
+
+        <div class="progress-item">
+          <div class="progress-info">
+            <span class="skill-name"><i class="devicon-react-original colored"></i> React & Next.js</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-info">
+            <span class="skill-name">
+              <i class="fa-solid fa-robot" style="color: #38bdf8; text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);"></i> 
+              {{ lang.lang() === 'th' ? 'การใช้งาน AI (Claude, Codex, Gemini)' : 'AI-Augmented Engineering' }}
+            </span>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" style="width: 80%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="other-skills">
+        @for (group of lang.t().expertise.groups; track group.title) {
+          <div class="other-skill-group">
+            <h4 class="label-md group-title">{{ group.title }}</h4>
+            <div class="tags">
+              @for (item of group.items; track item) {
+                @if (item !== 'Angular' && item !== 'TypeScript' && item !== 'React' && item !== 'Next.js') {
+                  <span class="tag">
+                    @if (isSvgIcon(item)) {
+                      <img [src]="getSvgIconUrl(item)" [alt]="item" class="tech-icon-img" />
+                    } @else if (getIconClass(item)) {
+                      <i [class]="getIconClass(item)" class="tech-icon"></i>
+                    }
+                    {{ item }}
+                  </span>
+                }
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

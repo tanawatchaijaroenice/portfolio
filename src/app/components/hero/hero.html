@@ -1,0 +1,46 @@
+<section class="hero-section" id="about">
+  <div class="ambient-glow hero-glow"></div>
+  
+  <div class="container hero-container">
+    <div class="hero-visual animate-load-up">
+      <div class="profile-frame hover-shadow">
+        <div class="profile-img-wrapper">
+          <img src="images/hero-profile.png" [alt]="lang.fullName()" class="profile-img" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content animate-load-up-delay-1">
+      <span class="status-badge">
+        <span class="status-dot"></span>
+        {{ lang.t().hero.status }}
+      </span>
+      <span class="label-md primary-label">{{ lang.t().hero.overline }}</span>
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight-text">{{ lang.lang() === 'th' ? 'ธนวัฒน์' : 'Tanawat' }}</span>
+      </h1>
+      <h2 class="hero-subtitle">
+        I'm a <span class="highlight-cyan">Front-End Developer</span>
+      </h2>
+      <p class="hero-tagline body-lg">
+        {{ lang.t().hero.tagline }}
+      </p>
+      <!-- Stats Grid -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">{{ getExperienceYears() }}+</span>
+          <span class="stat-lbl">{{ lang.lang() === 'th' ? 'ปีประสบการณ์' : 'Years Experience' }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">95%</span>
+          <span class="stat-lbl">{{ lang.lang() === 'th' ? 'ความถนัด Angular' : 'Angular Focus' }}</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="#projects" class="btn btn-primary">{{ lang.t().hero.ctaPrimary }}</a>
+        <a href="#contact" class="btn btn-secondary">{{ lang.t().hero.ctaSecondary }}</a>
+      </div>
+    </div>
+  </div>
+</section>

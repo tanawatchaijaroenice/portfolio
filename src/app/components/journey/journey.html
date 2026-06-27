@@ -1,0 +1,27 @@
+<section class="journey-section layer-surface" id="journey">
+  <div class="container grid grid-2">
+    <div class="journey-visual" appScrollAnimate>
+       <div class="art-layer"></div>
+    </div>
+    <div class="section-content" appScrollAnimate>
+      <span class="label-md primary-label">{{ lang.t().journey.overline }}</span>
+      <h2 class="display-lg">{{ lang.t().journey.heading }}</h2>
+
+      <div class="timeline mt-16">
+        @for (event of lang.t().journey.items; track event.role) {
+          <div class="timeline-event" [class.current]="event.current">
+            <div class="time label-md">
+              {{ event.time }}
+              @if (event.current) {
+                <span class="badge badge-current">{{ lang.lang() === 'th' ? 'ปัจจุบัน' : 'Present' }}</span>
+              }
+            </div>
+            <h3 class="body-lg">{{ event.role }}</h3>
+            <div class="org">{{ event.org }}</div>
+            <p>{{ event.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

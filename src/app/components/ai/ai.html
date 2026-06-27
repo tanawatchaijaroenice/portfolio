@@ -1,0 +1,54 @@
+<section class="ai-section" id="ai">
+  <div class="ambient-glow ai-glow"></div>
+  
+  <div class="container">
+    <div class="section-header" appScrollAnimate>
+      <span class="label-md primary-label">{{ lang.t().ai.overline }}</span>
+      <h2 class="display-lg">{{ lang.t().ai.heading }}</h2>
+      <p class="body-lg ai-intro">{{ lang.t().ai.body }}</p>
+    </div>
+
+    <!-- 3-Column Grid of Glowing cards -->
+    <div class="ai-grid" appScrollAnimate>
+      @for (point of lang.t().ai.points; track point; let i = $index) {
+        <article class="ai-card hover-shadow">
+          <div class="ai-card-glow-bg"></div>
+          <div class="ai-card-icon">
+            @switch (i) {
+              @case (0) { <i class="fa-solid fa-bolt-lightning text-yellow"></i> }
+              @case (1) { <i class="fa-solid fa-bug-slash text-red"></i> }
+              @case (2) { <i class="fa-solid fa-sitemap text-blue"></i> }
+              @case (3) { <i class="fa-solid fa-robot text-purple"></i> }
+              @case (4) { <i class="fa-solid fa-brain text-orange"></i> }
+              @case (5) { <i class="fa-solid fa-clipboard-list text-green"></i> }
+              @default { <i class="fa-solid fa-circle-nodes text-cyan"></i> }
+            }
+          </div>
+          <h3 class="ai-card-title">{{ getPointTitle(i) }}</h3>
+          <p class="ai-card-desc body-md">{{ point }}</p>
+        </article>
+      }
+    </div>
+
+    <!-- AI Stack Footer bar -->
+    <div class="ai-tools-footer" appScrollAnimate>
+      <span class="tools-label">{{ lang.lang() === 'th' ? 'ระบบและเครื่องมือประจำตัว' : 'Integrated AI Tools' }}</span>
+      <div class="tools-list">
+        @for (tool of lang.t().ai.tools; track tool) {
+          <span class="tool-chip">
+            @if (tool.includes('Claude')) {
+              <img src="images/claude-logo.png" alt="Claude" class="tool-icon-img" />
+            } @else if (tool.includes('Codex')) {
+              <img src="images/codex-logo.png" alt="Codex" class="tool-icon-img" />
+            } @else if (tool.includes('Antigravity')) {
+              <i class="fa-solid fa-circle-nodes" style="color: #60a5fa; margin-right: 0.35rem;"></i>
+            } @else {
+              <i class="fa-solid fa-server" style="color: #10b981; margin-right: 0.35rem;"></i>
+            }
+            {{ tool }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+</section>
